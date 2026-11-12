@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090909">
+<title>Evaluación · Oratoria para Producción de Moda | Apolo Creativo</title>
+<style>
+:root{--bg:#090909;--panel:#121212;--panel2:#181818;--gold:#c9a84e;--gold2:#e4ca78;--text:#f3f0e8;--muted:#aaa69b;--line:#302b20;--good:#7bd6a4;--bad:#ff8d8d}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#19160f 0,#090909 48%);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}
+.wrap{width:min(940px,calc(100% - 32px));margin:auto}.top{padding:32px 0 18px;text-align:center;border-bottom:1px solid var(--line)}
+.brand{letter-spacing:.25em;color:var(--gold2);font-weight:800;font-size:1.05rem}.brand span{color:#fff;font-weight:400;letter-spacing:.12em}
+.kicker{font-size:.75rem;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-top:18px}
+h1{font-family:Georgia,'Times New Roman',serif;font-weight:500;font-size:clamp(2rem,5vw,3.3rem);line-height:1.1;margin:10px 0;color:#f8f4e9}
+h1 em{font-style:normal;color:var(--gold2)}.subtitle{color:var(--muted);max-width:650px;margin:12px auto 0}
+main{padding:28px 0 60px}.panel{background:linear-gradient(145deg,#151515,#101010);border:1px solid var(--line);border-radius:18px;padding:clamp(18px,4vw,30px);box-shadow:0 18px 45px #0005;margin-bottom:20px}
+.section-title{font-family:Georgia,serif;font-size:1.5rem;margin:0 0 8px}.section-intro{color:var(--muted);margin:0 0 22px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}label{font-size:.88rem;color:#ddd}
+input,select{width:100%;background:#090909;border:1px solid #39352c;border-radius:10px;color:#fff;padding:13px 14px;font:inherit;outline:none}
+input:focus,select:focus{border-color:var(--gold);box-shadow:0 0 0 3px #c9a84e20}
+.btn{border:0;border-radius:999px;padding:14px 22px;font-weight:800;letter-spacing:.04em;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;justify-content:center;text-align:center}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.08)}.primary{background:linear-gradient(120deg,var(--gold),var(--gold2));color:#15120a}.secondary{background:#24221c;color:var(--gold2);border:1px solid #5b4c2c}.danger{background:#241717;color:#ffb0b0;border:1px solid #533030}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.actions .btn{flex:1;min-width:220px}
+.note{font-size:.84rem;color:var(--muted);margin-top:12px}
+.quiz-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}.progress-track{height:8px;background:#29251d;border-radius:99px;overflow:hidden;margin:12px 0 22px}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold2));transition:width .25s}
+.qcard{border:1px solid #302b20;background:#111;border-radius:15px;padding:20px;margin:14px 0}.qnum{font-size:.72rem;letter-spacing:.15em;color:var(--gold);font-weight:800}.concept{font-family:Georgia,serif;font-style:italic;color:#e4ca78;margin:8px 0 13px;font-size:1.08rem}.question{font-weight:700;font-size:1.04rem;margin:0 0 16px}
+.options{display:grid;gap:9px}.option{display:flex;align-items:flex-start;gap:12px;padding:12px;border:1px solid #34312a;border-radius:10px;background:#171717;cursor:pointer;transition:.15s}.option:hover{border-color:#8b743b}.option input{width:17px;height:17px;margin:3px 0 0;accent-color:var(--gold);flex:none}.option.selected{border-color:var(--gold);background:#292316}.letter{color:var(--gold2);font-weight:800;min-width:20px}
+.hidden{display:none!important}.result-score{font-family:Georgia,serif;font-size:clamp(3rem,10vw,5.4rem);line-height:1;color:var(--gold2);margin:12px 0}.result-sub{color:var(--muted)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0}.stat{background:#0b0b0b;border:1px solid var(--line);padding:15px;border-radius:12px;text-align:center}.stat strong{display:block;font-size:1.5rem;color:var(--gold2)}.stat span{font-size:.8rem;color:var(--muted)}
+.review{border:1px solid var(--line);border-radius:12px;padding:16px;margin:12px 0;background:#101010}.review.correct{border-left:4px solid var(--good)}.review.incorrect{border-left:4px solid var(--bad)}.review h3{font-size:1rem;margin:7px 0}.tag{font-size:.76rem;font-weight:800;letter-spacing:.04em}.tag.good{color:var(--good)}.tag.bad{color:var(--bad)}.explain{color:var(--muted);font-size:.9rem;margin-top:9px}
+footer{text-align:center;padding:24px;color:#777;font-size:.8rem;border-top:1px solid var(--line)}.toast{padding:12px;border-radius:10px;background:#2b2110;border:1px solid #6e5727;color:#f0d58a;margin:12px 0}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.field.full{grid-column:auto}.stats{grid-template-columns:1fr 1fr}.stats .stat:last-child{grid-column:1/-1}.actions{flex-direction:column}.actions .btn{width:100%}.panel{border-radius:14px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<div class="brand">APOLO <span>CREATIVO</span></div>
+<div class="kicker">Evaluación de conocimientos · Clase teórico-práctica</div>
+<h1>Oratoria para<br><em>Producción de Moda</em></h1>
+<p class="subtitle">Una evaluación para poner en práctica tus herramientas de comunicación profesional.</p>
+</div></header>
+<main class="wrap">
+<section class="panel" id="studentPanel">
+<h2 class="section-title">Datos de la alumna</h2>
+<p class="section-intro">Completá tus datos para habilitar la evaluación.</p>
+<form id="studentForm">
+<div class="grid">
+<div class="field"><label for="nombre">Nombre</label><input id="nombre" name="nombre" autocomplete="given-name" required></div>
+<div class="field"><label for="apellido">Apellido</label><input id="apellido" name="apellido" autocomplete="family-name" required></div>
+<div class="field"><label for="correo">Correo electrónico</label><input id="correo" name="correo" type="email" autocomplete="email" required></div>
+<div class="field"><label for="curso">Curso</label><input id="curso" name="curso" placeholder="Ej. Producción de Moda · 2026" required></div>
+</div>
+<div class="actions"><button class="btn primary" type="submit">COMENZAR EVALUACIÓN</button></div>
+<p class="note">Tus datos y respuestas se procesan únicamente en este navegador. No se guardan ni se envían a ningún servidor.</p>
+</form>
+</section>
+
+<section class="panel hidden" id="quizPanel">
+<div class="quiz-head"><h2 class="section-title">Evaluación</h2><strong id="progressText">Respondidas 0 de 10</strong></div>
+<div class="progress-track" role="progressbar" aria-label="Progreso de respuestas" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0"><div class="progress-fill" id="progressFill"></div></div>
+<div id="questions"></div>
+<div id="quizNotice" class="toast hidden" role="alert"></div>
+<div class="actions"><button class="btn primary" id="finishBtn">FINALIZAR EVALUACIÓN</button><button class="btn secondary" id="resetQuiz">REINICIAR</button></div>
+</section>
+
+<section class="panel hidden" id="resultPanel">
+<div class="kicker">Evaluación completada</div><h2 class="section-title">Tu resultado</h2>
+<div id="studentResult"></div>
+<div class="result-score" id="score">—/100</div><p id="feedback" class="result-sub"></p>
+<div class="stats"><div class="stat"><strong id="correctCount">0</strong><span>Correctas</span></div><div class="stat"><strong id="incorrectCount">0</strong><span>Incorrectas</span></div><div class="stat"><strong id="percent">0%</strong><span>Desempeño</span></div></div>
+<div class="actions"><button class="btn primary" id="downloadBtn">DESCARGAR MI RESULTADO</button><button class="btn secondary" id="whatsappBtn">ENVIAR RESULTADO AL PROFESOR POR WHATSAPP</button></div>
+<p class="note" id="shareNote">Podés descargar tu imagen y compartirla por WhatsApp.</p>
+</section>
+<section class="panel hidden" id="reviewPanel"><h2 class="section-title">Revisión de respuestas</h2><p class="section-intro">Revisá tus elecciones y las explicaciones de cada concepto.</p><div id="reviewList"></div></section>
+</main>
+<footer>APOLO CREATIVO · Docente: Lolo Ramos · Oratoria aplicada a Producción de Moda</footer>
+
+<script>
+"use strict";
+// Banco de preguntas basado en el material "Oratoria y Comunicación Profesional – Producción de Moda".
+const questions = [
+{concept:"La oratoria combina palabra, voz, cuerpo y conexión con quienes escuchan.",q:"En una reunión, una productora explica con claridad el concepto de una colección y busca que la marca valore su propuesta. ¿Qué está poniendo en práctica?",opts:["Una comunicación oral con intención y eficacia.","Una descripción técnica sin objetivo comunicativo.","Una exposición centrada únicamente en hablar correctamente."],a:0,why:"La oratoria organiza ideas y utiliza palabra, voz y cuerpo para que el mensaje se comprenda y pueda informar o persuadir."},
+{concept:"El orador transmite, el discurso es el contenido y el público recibe e interpreta.",q:"Vas a presentar la misma producción ante un equipo creativo y ante una marca. ¿Qué decisión demuestra comprensión de los elementos de la comunicación?",opts:["Repetir exactamente el mismo mensaje sin considerar quién escucha.","Adaptar la explicación y sus beneficios al público de cada encuentro.","Cambiar solamente la vestimenta y mantener el mensaje idéntico."],a:1,why:"Conocer al público permite adaptar el mensaje: un equipo creativo y una marca pueden tener intereses y conocimientos diferentes."},
+{concept:"La seguridad se construye muchas veces mientras hacemos aquello que nos da miedo.",q:"Antes de defender una propuesta en un casting profesional sentís nervios. ¿Qué estrategia es más adecuada?",opts:["Memorizar cada palabra y evitar cualquier pausa.","Esperar a no sentir ningún nervio para presentarte.","Preparar ideas principales, practicar en voz alta y concentrarte en lo que querés aportar."],a:2,why:"El objetivo no es eliminar por completo los nervios, sino reconocerlos y manejarlos. Preparar, practicar y enfocarse en el aporte ayuda a ganar seguridad."},
+{concept:"Las pausas permiten respirar, ordenar y destacar ideas; el ritmo facilita la comprensión.",q:"Al presentar una colección decís: «No buscamos solamente mostrar prendas… (pausa) buscamos contar una historia». ¿Qué recurso estás usando principalmente?",opts:["Una pausa para dar fuerza a la idea y permitir que el público la procese.","Un aumento de volumen que reemplaza la articulación.","Una aceleración del ritmo para evitar silencios."],a:0,why:"Una pausa breve después de una idea importante permite procesarla y da mayor fuerza a lo que sigue."},
+{concept:"La postura, mirada, gestos y movimientos pueden reforzar o contradecir las palabras.",q:"Durante una presentación afirmás que te entusiasma una propuesta, pero mirás constantemente el celular. ¿Qué problema aparece?",opts:["Ninguno: el contenido verbal siempre prevalece.","Una contradicción entre el mensaje verbal y la expresión corporal.","Una correcta distribución de la mirada entre el público."],a:1,why:"La comunicación es más coherente cuando cuerpo y palabras acompañan el mismo mensaje. Mirar el celular puede transmitir desinterés."},
+{concept:"La imagen personal debe ser coherente con el contexto, el público y la identidad propia.",q:"Para una reunión con una marca elegís tu vestuario. ¿Cuál es el criterio más profesional?",opts:["Copiar el estilo de otra profesional reconocida.","Usar siempre la ropa más llamativa, sin considerar la ocasión.","Elegir una imagen cuidada, auténtica y adecuada al encuentro, que permita comodidad y movimiento."],a:2,why:"No hay una única vestimenta correcta: importa el contexto, la identidad que se quiere transmitir, la comodidad y evitar distracciones innecesarias."},
+{concept:"Una presentación clara tiene apertura, desarrollo y cierre.",q:"Vas a defender una producción de moda ante un cliente. ¿Qué orden ayuda a que siga tu exposición?",opts:["Abrir con el concepto, desarrollar estética y planificación, y cerrar con el aporte y un próximo paso.","Comenzar con todos los detalles técnicos, improvisar el concepto y terminar sin conclusión.","Presentar el cierre primero y repetirlo durante toda la reunión."],a:0,why:"La apertura despierta interés y presenta el tema; el desarrollo explica argumentos e ideas; el cierre recupera lo central y propone una conclusión o próximo paso."},
+{concept:"Venderse profesionalmente es reconocer el valor del trabajo y explicarlo sin exagerar.",q:"Una clienta pregunta qué ofrecés. ¿Cuál respuesta comunica mejor tu valor?",opts:["«Hago algunas producciones, pero no sé si te va a gustar».","«Desarrollo conceptos visuales y acompaño su realización desde la idea hasta la producción».","«Puedo hacer cualquier cosa y garantizar que todo será perfecto»."],a:1,why:"Comunicar valor implica explicar capacidades, solución y aporte con claridad, sin minimizarse ni inventar experiencia."},
+{concept:"Una presentación de 30 segundos puede incluir quién soy, qué hago, qué me diferencia y qué aporto.",q:"En un evento te preguntan a qué te dedicás. ¿Qué presentación breve resulta más efectiva?",opts:["Enumerar todos tus antecedentes y proyectos, sin orden ni límite.","Decir solamente tu nombre y esperar que la otra persona adivine tu actividad.","Presentar tu perfil, actividad, fortaleza y aporte posible a una marca o proyecto."],a:2,why:"La presentación breve no es un currículum completo: es una invitación clara y natural a conocerte profesionalmente."},
+{concept:"Ser asertiva es expresar ideas y límites con claridad y respeto, escuchando al otro.",q:"Un cliente dice que el presupuesto es demasiado caro y no le convence la idea. ¿Cómo respondés asertivamente?",opts:["«Entiendo tu inquietud; repasemos qué incluye y qué recursos contempla, y contame qué aspecto no termina de funcionar».","«Si no te gusta, no puedo hacer nada» y finalizás la conversación.","Aceptar de inmediato cualquier reducción sin explicar el alcance."],a:0,why:"La comunicación asertiva escucha, reconoce el planteo y sostiene la postura con respeto. Para responder, conviene comprender la objeción y explicar el valor."}
+];
+const letters=["A","B","C"];
+let student=null, answers=Array(questions.length).fill(null), completed=false, result=null, resultBlob=null;
+const $=id=>document.getElementById(id);
+const studentPanel=$("studentPanel"),quizPanel=$("quizPanel"),resultPanel=$("resultPanel"),reviewPanel=$("reviewPanel");
+function renderQuestions(){
+ const root=$("questions");root.innerHTML="";
+ questions.forEach((item,i)=>{
+  const card=document.createElement("article");card.className="qcard";card.id="q"+i;
+  card.innerHTML=`<div class="qnum">PREGUNTA ${String(i+1).padStart(2,"0")} · 10 PUNTOS</div><div class="concept">${item.concept}</div><p class="question">${item.q}</p><div class="options" role="radiogroup" aria-label="Pregunta ${i+1}"></div>`;
+  const opts=card.querySelector(".options");
+  item.opts.forEach((op,j)=>{
+   const label=document.createElement("label");label.className="option"+(answers[i]===j?" selected":"");
+   label.innerHTML=`<input type="radio" name="q${i}" value="${j}" ${answers[i]===j?"checked":""} ${completed?"disabled":""}><span class="letter">${letters[j]}.</span><span>${op}</span>`;
+   label.querySelector("input").addEventListener("change",()=>{if(completed)return;answers[i]=j;renderQuestions();updateProgress();});
+   opts.appendChild(label);
+  });root.appendChild(card);
+ });
+}
+function updateProgress(){const n=answers.filter(x=>x!==null).length;$("progressText").textContent=`Respondidas ${n} de 10`;$("progressFill").style.width=(n*10)+"%";document.querySelector('[role="progressbar"]').setAttribute("aria-valuenow",n);}
+$("studentForm").addEventListener("submit",e=>{e.preventDefault();if(!e.target.reportValidity())return;student={nombre:$("nombre").value.trim(),apellido:$("apellido").value.trim(),correo:$("correo").value.trim(),curso:$("curso").value.trim()};if(!student.nombre||!student.apellido||!student.curso)return;studentPanel.classList.add("hidden");quizPanel.classList.remove("hidden");renderQuestions();updateProgress();window.scrollTo({top:0,behavior:"smooth"});});
+$("finishBtn").addEventListener("click",()=>{
+ if(completed)return;const missing=answers.findIndex(x=>x===null);if(missing!==-1){$("quizNotice").textContent=`Te falta responder la pregunta ${missing+1}. Completá las 10 para finalizar.`;$("quizNotice").classList.remove("hidden");$("q"+missing).scrollIntoView({behavior:"smooth",block:"center"});return;}
+ completed=true;result=answers.reduce((sum,a,i)=>sum+(a===questions[i].a?1:0),0);renderQuestions();$("finishBtn").disabled=true;$("resetQuiz").disabled=true;
+ showResults();quizPanel.classList.add("hidden");resultPanel.classList.remove("hidden");reviewPanel.classList.remove("hidden");window.scrollTo({top:0,behavior:"smooth"});
+});
+$("resetQuiz").addEventListener("click",()=>{if(!confirm("¿Querés borrar todas tus respuestas y comenzar de nuevo?"))return;answers=Array(10).fill(null);renderQuestions();updateProgress();$("quizNotice").classList.add("hidden");});
+function showResults(){
+ const full=student.nombre+" "+student.apellido,correct=result,wrong=10-result,score=result*10;
+ $("studentResult").innerHTML=`<p><strong>${escapeHTML(full)}</strong> · ${escapeHTML(student.curso)}</p>`;
+ $("score").textContent=score+"/100";$("correctCount").textContent=correct;$("incorrectCount").textContent=wrong;$("percent").textContent=score+"%";
+ $("feedback").textContent=score===100?"¡Excelente! Demostraste una comprensión sólida y aplicada de los recursos de oratoria.":score>=80?"¡Muy buen trabajo! Comprendés los conceptos y podés seguir fortaleciendo su aplicación profesional.":score>=60?"Buen avance. Revisá las explicaciones para afianzar herramientas que te ayudarán en situaciones reales.":"Esta evaluación es una oportunidad para aprender. Revisá cada explicación y volvé a practicar: la comunicación se entrena.";
+ const list=$("reviewList");list.innerHTML="";
+ questions.forEach((q,i)=>{const ok=answers[i]===q.a;const el=document.createElement("article");el.className="review "+(ok?"correct":"incorrect");
+ el.innerHTML=`<span class="tag ${ok?"good":"bad"}">${ok?"✓ CORRECTA · 10 PUNTOS":"✕ INCORRECTA · 0 PUNTOS"}</span><h3>${i+1}. ${q.q}</h3><p class="explain"><strong>Tu respuesta:</strong> ${letters[answers[i]]}. ${escapeHTML(q.opts[answers[i]])}</p>${ok?"":`<p class="explain"><strong>Respuesta correcta:</strong> ${letters[q.a]}. ${escapeHTML(q.opts[q.a])}</p>`}<p class="explain">${escapeHTML(q.why)}</p>`;
+ list.appendChild(el);});
+}
+function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+// PNG de alta resolución generado con Canvas, sin dependencias externas.
+function makeResultPNG(){
+ const canvas=document.createElement("canvas"),ctx=canvas.getContext("2d");canvas.width=1200;canvas.height=1500;
+ const g=ctx.createLinearGradient(0,0,1200,1500);g.addColorStop(0,"#17140e");g.addColorStop(.55,"#090909");g.addColorStop(1,"#17120b");ctx.fillStyle=g;ctx.fillRect(0,0,1200,1500);
+ ctx.strokeStyle="#c9a84e";ctx.lineWidth=3;ctx.strokeRect(45,45,1110,1410);ctx.strokeStyle="#514225";ctx.lineWidth=1;ctx.strokeRect(65,65,1070,1370);
+ ctx.textAlign="center";ctx.fillStyle="#e4ca78";ctx.font="bold 42px Arial";ctx.fillText("APOLO CREATIVO",600,190);
+ ctx.fillStyle="#a9a18e";ctx.font="22px Arial";ctx.fillText("ORATORIA · PRODUCCIÓN DE MODA",600,240);
+ ctx.strokeStyle="#c9a84e";ctx.beginPath();ctx.moveTo(300,290);ctx.lineTo(900,290);ctx.stroke();
+ ctx.fillStyle="#f4f0e5";ctx.font="50px Georgia";ctx.fillText("Resultado de evaluación",600,400);
+ ctx.fillStyle="#b8b1a2";ctx.font="24px Arial";ctx.fillText("ALUMNA",600,500);
+ ctx.fillStyle="#fff";ctx.font="bold 43px Arial";wrapCanvas(ctx,student.nombre+" "+student.apellido,600,570,900,55);
+ ctx.fillStyle="#b8b1a2";ctx.font="24px Arial";ctx.fillText("CURSO",600,690);
+ ctx.fillStyle="#f4f0e5";ctx.font="30px Arial";wrapCanvas(ctx,student.curso,600,745,900,42);
+ ctx.fillStyle="#e4ca78";ctx.font="bold 150px Georgia";ctx.fillText(result*10,600,970);
+ ctx.fillStyle="#d8cfbd";ctx.font="36px Arial";ctx.fillText("/ 100 PUNTOS",600,1035);
+ ctx.fillStyle="#c9a84e";ctx.font="bold 30px Arial";ctx.fillText(result+" / 10 RESPUESTAS CORRECTAS",600,1150);
+ ctx.fillStyle="#a9a18e";ctx.font="24px Arial";ctx.fillText("Oratoria para Producción de Moda",600,1260);
+ ctx.fillStyle="#777064";ctx.font="22px Arial";ctx.fillText("Docente: Lolo Ramos",600,1340);
+ ctx.fillStyle="#e4ca78";ctx.font="20px Arial";ctx.fillText("APRENDER A COMUNICAR ES APRENDER A MOSTRAR QUIÉNES SOMOS",600,1400);
+ return new Promise(resolve=>canvas.toBlob(b=>{resultBlob=b;resolve(b)},"image/png"));
+}
+function wrapCanvas(ctx,text,x,y,maxWidth,lineHeight){const words=String(text).split(" ");let line="",lines=[];for(const word of words){const test=line?line+" "+word:word;if(ctx.measureText(test).width>maxWidth&&line){lines.push(line);line=word;}else line=test;}if(line)lines.push(line);lines.forEach((l,i)=>ctx.fillText(l,x,y+i*lineHeight));}
+async function ensurePNG(){return resultBlob||await makeResultPNG();}
+$("downloadBtn").addEventListener("click",async()=>{const blob=await ensurePNG();const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="Resultado_Oratoria_"+student.apellido.replace(/[^a-z0-9]/gi,"_")+".png";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);});
+$("whatsappBtn").addEventListener("click",async()=>{
+ const msg=`Hola, soy ${student.nombre} ${student.apellido}. Comparto mi resultado de la evaluación de Oratoria para Producción de Moda.\n\nCurso: ${student.curso}\nCorreo: ${student.correo}\nNota final: ${result*10}/100\nRespuestas correctas: ${result}/10.`;
+ const file=new File([await ensurePNG()],"Resultado_Oratoria_"+student.apellido+".png",{type:"image/png"});
+ if(navigator.canShare&&navigator.canShare({files:[file]})&&navigator.share){
+  try{await navigator.share({title:"Resultado de evaluación",text:msg,files:[file]});$("shareNote").textContent="Se abrió la opción de compartir. Confirmá el envío desde la aplicación que elegiste.";return;}catch(err){if(err.name==="AbortError")return;}
+ }
+ window.open("https://wa.me/5493513487409?text="+encodeURIComponent(msg),"_blank","noopener");
+ $("shareNote").textContent="WhatsApp se abrió con el mensaje preparado. Descargá la imagen y adjuntala manualmente; el resultado no se envió automáticamente.";
+});
+</script>
+</body>
+</html>
