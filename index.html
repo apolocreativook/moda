@@ -150,14 +150,24 @@ function makeResultPNG(){
 function wrapCanvas(ctx,text,x,y,maxWidth,lineHeight){const words=String(text).split(" ");let line="",lines=[];for(const word of words){const test=line?line+" "+word:word;if(ctx.measureText(test).width>maxWidth&&line){lines.push(line);line=word;}else line=test;}if(line)lines.push(line);lines.forEach((l,i)=>ctx.fillText(l,x,y+i*lineHeight));}
 async function ensurePNG(){return resultBlob||await makeResultPNG();}
 $("downloadBtn").addEventListener("click",async()=>{const blob=await ensurePNG();const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="Resultado_Oratoria_"+student.apellido.replace(/[^a-z0-9]/gi,"_")+".png";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);});
+
 $("whatsappBtn").addEventListener("click",()=>{
- const msg=buildMessage();
- const url="https://wa.me/5493513487409?text="+encodeURIComponent(msg);
+  const msg =
+    "Hola, Lolo. Soy " + student.nombre + " " + student.apellido +
+    ".\n\nTe envío mi resultado de la evaluación de Oratoria para Producción de Moda." +
+    "\n\nCurso: " + student.curso +
+    "\nCorreo: " + student.correo +
+    "\n\nNota: " + (result * 10) + "/100" +
+    "\nRespuestas correctas: " + result + " de 10.";
 
- window.open(url,"_blank","noopener,noreferrer");
+  const url = "https://wa.me/5493517426042?text=" + encodeURIComponent(msg);
 
- $("shareNote").textContent="Se abrió el chat del profesor. Adjuntá la imagen descargada de tu resultado y enviá el mensaje.";
+  window.open(url, "_blank");
+
+  $("shareNote").textContent =
+    "Se abrió el WhatsApp del profesor. Adjuntá la imagen descargada de tu resultado y enviá el mensaje.";
 });
+
 </script>
 </body>
 </html>
