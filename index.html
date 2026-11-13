@@ -150,14 +150,13 @@ function makeResultPNG(){
 function wrapCanvas(ctx,text,x,y,maxWidth,lineHeight){const words=String(text).split(" ");let line="",lines=[];for(const word of words){const test=line?line+" "+word:word;if(ctx.measureText(test).width>maxWidth&&line){lines.push(line);line=word;}else line=test;}if(line)lines.push(line);lines.forEach((l,i)=>ctx.fillText(l,x,y+i*lineHeight));}
 async function ensurePNG(){return resultBlob||await makeResultPNG();}
 $("downloadBtn").addEventListener("click",async()=>{const blob=await ensurePNG();const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="Resultado_Oratoria_"+student.apellido.replace(/[^a-z0-9]/gi,"_")+".png";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);});
-$("whatsappBtn").addEventListener("click",async()=>{
- const msg=`Hola, soy ${student.nombre} ${student.apellido}. Comparto mi resultado de la evaluación de Oratoria para Producción de Moda.\n\nCurso: ${student.curso}\nCorreo: ${student.correo}\nNota final: ${result*10}/100\nRespuestas correctas: ${result}/10.`;
- const file=new File([await ensurePNG()],"Resultado_Oratoria_"+student.apellido+".png",{type:"image/png"});
- if(navigator.canShare&&navigator.canShare({files:[file]})&&navigator.share){
-  try{await navigator.share({title:"Resultado de evaluación",text:msg,files:[file]});$("shareNote").textContent="Se abrió la opción de compartir. Confirmá el envío desde la aplicación que elegiste.";return;}catch(err){if(err.name==="AbortError")return;}
- }
- window.open("https://wa.me/5493513487409?text="+encodeURIComponent(msg),"_blank","noopener");
- $("shareNote").textContent="WhatsApp se abrió con el mensaje preparado. Descargá la imagen y adjuntala manualmente; el resultado no se envió automáticamente.";
+$("whatsappBtn").addEventListener("click",()=>{
+ const msg=buildMessage();
+ const url="https://wa.me/5493513487409?text="+encodeURIComponent(msg);
+
+ window.open(url,"_blank","noopener,noreferrer");
+
+ $("shareNote").textContent="Se abrió el chat del profesor. Adjuntá la imagen descargada de tu resultado y enviá el mensaje.";
 });
 </script>
 </body>
